@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ff76b7">
+<title>Happy Birthday, Aleena 💗</title>
+<style>
+:root{--pink:#ff6eb4;--deep:#35132d;--cream:#fff5fb}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;font-family:Georgia,'Times New Roman',serif;color:white;background:radial-gradient(ellipse at top,#702650 0,#32162e 48%,#170f20 100%);overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background-image:radial-gradient(#ffc8e5 1px,transparent 1px);background-size:34px 34px;opacity:.22}
+.wrap{width:min(960px,92%);margin:auto;padding:38px 0 60px;text-align:center;position:relative}
+.eyebrow{letter-spacing:5px;text-transform:uppercase;color:#ffc6e5;font-size:.75rem}
+h1{font-size:clamp(2.8rem,9vw,6.2rem);line-height:1.03;margin:14px 0;color:#ff8dc8;text-shadow:0 0 24px #ff299c88;font-weight:normal}
+h1 span{display:block;font-style:italic;color:#fff0f8}
+.subtitle{font-size:1.2rem;color:#ffd7eb}
+.card{margin:28px auto;padding:28px 24px;max-width:680px;border:1px solid #ffabd6aa;border-radius:26px;background:#ffb7dc18;backdrop-filter:blur(8px);box-shadow:0 0 38px #ff3d9d20}
+button,.button{display:inline-block;border:1px solid #ffb4d8;border-radius:999px;padding:13px 22px;margin:8px;background:#ff72b5;color:#38132e;font-weight:bold;font-size:1rem;cursor:pointer;text-decoration:none;box-shadow:0 0 22px #ff72b555;transition:transform .2s}
+button:hover,.button:hover{transform:translateY(-2px)}
+.letter{color:#fff2fa;font-size:1.1rem;line-height:1.9}
+.letter strong{color:#ffacd5;font-size:1.35rem}
+.hidden{display:none}
+.surprise{font-size:1.25rem;color:#ffe0ef;line-height:1.8;margin-top:20px}
+.art{width:min(100%,760px);border-radius:18px;margin:26px auto 4px;display:block;box-shadow:0 12px 45px #0006;border:1px solid #ffabd655}
+.hearts{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:-0}
+.heart{position:absolute;bottom:-30px;animation:float 9s linear infinite;opacity:.7}
+@keyframes float{to{transform:translateY(-110vh) rotate(25deg);opacity:0}}
+footer{color:#e9b4d1;font-size:.85rem;margin-top:35px}
+.small{font-size:.85rem;color:#eec4da}
+@media(max-width:500px){.card{padding:22px 17px}.letter{font-size:1rem}.wrap{padding-top:28px}}
+</style>
+</head>
+<body>
+<div class="hearts" id="hearts"></div>
+<main class="wrap">
+  <div class="eyebrow">A little birthday magic, just for you</div>
+  <h1>Happy Birthday,<span>Aleena ♡</span></h1>
+  <p class="subtitle">To my favorite person, my sweetest love 💗</p>
+  <button id="musicBtn" onclick="openSong()">♫ Play our song — Until I Found You</button>
+  <p class="small">Tap the button to listen. Your browser may open the song in YouTube.</p>
+  <section class="card letter">
+    <strong>My Dearest Aleena, 💌</strong><br><br>
+    Happy birthday to the girl who makes my world brighter just by being in it.
+    Your smile is my favorite view, your happiness means everything to me,
+    and every moment with you is a memory I want to keep forever.
+    <br><br>
+    I hope this new year of your life brings you all the love, peace, laughter,
+    and beautiful surprises your heart can hold. You deserve the whole world
+    and so much more.
+    <br><br>
+    Thank you for being you. No matter how many birthdays come and go,
+    I’ll always be cheering for you, choosing you, and wishing you the happiest life.
+    <br><br><strong>Happy Birthday, my love. I love you, Aleena. ♡</strong>
+  </section>
+  <button onclick="revealSurprise()">🎁 Open your little surprise</button>
+  <div class="card surprise hidden" id="surprise">
+    💖 Surprise, my birthday princess! 💖<br>
+    If I could give you one thing in this world, it would be the ability to see
+    yourself through my eyes. Then you’d know just how special, beautiful,
+    and loved you are. Today is all about you, Aleena. Make a wish, birthday girl! 🎂✨
+  </div>
+  <div class="small">🌸 You are loved. You are cherished. You are my favorite. 🌸</div>
+  <img class="art" src="birthday-art.png" alt="Pink romantic birthday artwork for Aleena" onerror="this.style.display='none'">
+  <footer>Made with love, just for Aleena 💗</footer>
+</main>
+<script>
+function openSong(){
+  window.open('https://www.youtube.com/results?search_query=Stephen+Sanchez+Until+I+Found+You+official+audio','_blank','noopener');
+}
+function revealSurprise(){
+  const el=document.getElementById('surprise');
+  el.classList.toggle('hidden');
+  if(!el.classList.contains('hidden')) el.scrollIntoView({behavior:'smooth',block:'center'});
+}
+const holder=document.getElementById('hearts');
+const symbols=['♡','♥','💗','✧'];
+for(let i=0;i<22;i++){
+ const h=document.createElement('span');h.className='heart';h.textContent=symbols[i%symbols.length];
+ h.style.left=Math.random()*100+'%';h.style.animationDelay=(Math.random()*9)+'s';
+ h.style.animationDuration=(7+Math.random()*8)+'s';h.style.fontSize=(12+Math.random()*20)+'px';
+ h.style.color=['#ff8fc8','#ffd7eb','#fff'][i%3];holder.appendChild(h);
+}
+</script>
+</body>
+</html>
